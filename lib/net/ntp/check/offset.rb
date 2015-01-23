@@ -46,7 +46,7 @@ module Net
 
       # Get the time offset against the given host
       def self.get_offset(host = DEFAULT_SERVERS[0], timeout = TIMEOUT)
-        get_host_data(host, timeout).offset
+        get_host_data(host, timeout)[0].offset
       end
 
       private
@@ -54,8 +54,11 @@ module Net
       # Do the NTP request and catch exceptions
       def self.get_host_data(host, timeout = TIMEOUT)
         t = Net::NTP.get(host, 'ntp', timeout)
-        Net::NTP::Check.logger.debug("Received NTP data for #{host}")
-        t
+        delay = (t.client_time_receive - t.originate_timestamp) -
+                (t.transmit_timestamp - t.receive_timestamp)
+        msg = "Received NTP data for #{host} with ntp delay of #{delay}"
+        Net::NTP::Check.logger.debug(msg)
+        return t, delay
       rescue SocketError
         err_msg = "Unable to resolve #{host}"
         Net::NTP::Check.logger.debug(err_msg)
