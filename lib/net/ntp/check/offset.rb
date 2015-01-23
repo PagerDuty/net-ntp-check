@@ -80,8 +80,10 @@ module Net
         def self.filter(values)
           v = values.sort
           Net::NTP::Check.logger.debug("AutoBandPass values: #{v}")
-          avg = average(v[3..5])
-          Net::NTP::Check.logger.debug("AutoBandPass mid 3 values avg: #{avg}")
+          middle = values.length / 2.0
+          middle.ceil unless values.length % 2
+          avg = average(v[(middle - 1).floor..(middle + 1).floor])
+          Net::NTP::Check.logger.debug("AutoBandPass mid values avg: #{avg}")
           v = apply_band(v, avg)
           Net::NTP::Check.logger.debug("AutoBandPass values with filter: #{v}")
           average(v)
