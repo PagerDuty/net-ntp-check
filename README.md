@@ -1,10 +1,9 @@
 # Net::Ntp::Check
 
-[![Build Status](https://travis-ci.org/shortdudey123/net-ntp-check.svg?branch=master)](https://travis-ci.org/shortdudey123/net-ntp-check)
+[![Build Status](https://travis-ci.org/pagerduty/net-ntp-check.svg?branch=master)](https://travis-ci.org/pagerduty/net-ntp-check)
 [![Gem Version](http://img.shields.io/gem/v/net-ntp-check.svg)](https://rubygems.org/gems/net-ntp-check)
-[![Coverage Status](https://img.shields.io/coveralls/shortdudey123/net-ntp-check/master.svg)](https://coveralls.io/r/shortdudey123/net-ntp-check?branch=master)
-[![Code Climate](https://codeclimate.com/github/shortdudey123/net-ntp-check/badges/gpa.svg)](https://codeclimate.com/github/shortdudey123/net-ntp-check)
-[![Dependency Status](https://img.shields.io/gemnasium/shortdudey123/net-ntp-check.svg)](https://gemnasium.com/shortdudey123/net-ntp-check)
+[![Coverage Status](https://img.shields.io/coveralls/pagerduty/net-ntp-check/master.svg)](https://coveralls.io/r/pagerduty/net-ntp-check?branch=master)
+[![Code Climate](https://codeclimate.com/github/pagerduty/net-ntp-check/badges/gpa.svg)](https://codeclimate.com/github/pagerduty/net-ntp-check)
 
 Checks NTP offset against several NTP servers and allows pushing of offset stats via statsd
 
@@ -26,7 +25,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Get NTP offsets based on several servers
+```ruby
+require 'net/ntp/check'
+offsets = Net::NTP::Check.get_offsets
+```
+
+### Get NTP offset based on several servers with a 200ms bandpass filter applied
+```ruby
+require 'net/ntp/check'
+offsets = Net::NTP::Check.get_offsets_filtered
+```
+
+### Send NTP offset to statsd
+```ruby
+require 'net/ntp/check'
+client = Net::NTP::Check::StatsdClient.new
+client.send_offset_stats
+```
 
 ## Contributing
 

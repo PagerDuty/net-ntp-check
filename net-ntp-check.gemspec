@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'net-ntp-check'
   spec.version       = Net::NTP::Check::VERSION
   spec.authors       = ['Grant Ridder']
-  spec.email         = ['shortdudey123@gmail.com']
+  spec.email         = ['grant@pagerduty.com']
   spec.summary       = 'NTP offset check'
   spec.description   = 'Checks NTP offset against several NTP servers and allows pushing of offset stats via statsd'
   spec.license       = 'MIT'
