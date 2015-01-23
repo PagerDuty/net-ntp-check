@@ -46,7 +46,7 @@ client.send_offset_stats
 
 ## Contributing
 
-1. Fork it ( https://github.com/shortdudey123/net-ntp-check/fork )
+1. Fork it ( https://github.com/pagerduty/net-ntp-check/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
