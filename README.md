@@ -1,9 +1,9 @@
 # Net::Ntp::Check
 
-[![Build Status](https://travis-ci.org/pagerduty/net-ntp-check.svg?branch=master)](https://travis-ci.org/pagerduty/net-ntp-check)
+[![Build Status](https://travis-ci.org/PagerDuty/net-ntp-check.svg?branch=master)](https://travis-ci.org/PagerDuty/net-ntp-check)
 [![Gem Version](http://img.shields.io/gem/v/net-ntp-check.svg)](https://rubygems.org/gems/net-ntp-check)
-[![Coverage Status](https://img.shields.io/coveralls/pagerduty/net-ntp-check/master.svg)](https://coveralls.io/r/pagerduty/net-ntp-check?branch=master)
-[![Code Climate](https://codeclimate.com/github/pagerduty/net-ntp-check/badges/gpa.svg)](https://codeclimate.com/github/pagerduty/net-ntp-check)
+[![Coverage Status](https://img.shields.io/coveralls/PagerDuty/net-ntp-check/master.svg)](https://coveralls.io/r/PagerDuty/net-ntp-check?branch=master)
+[![Code Climate](https://codeclimate.com/github/PagerDuty/net-ntp-check/badges/gpa.svg)](https://codeclimate.com/github/PagerDuty/net-ntp-check)
 
 Checks NTP offset against several NTP servers and allows pushing of offset stats via statsd
 
