@@ -1,6 +1,20 @@
 require 'spec_helper'
 
 describe 'Net::NTP::Check' do
+  let(:result) { Net::NTP::Check.get_offsets_filtered }
+
+  it 'should throw an exception if the connection times out' do
+    expect { Net::NTP::Check.get_offset('www.google.com', 1) }.to raise_error
+  end
+
+  it 'should throw an exception if the hostname can not be resolved' do
+    expect { Net::NTP::Check.get_offset('nosuchhost') }.to raise_error
+  end
+
+  it 'should get_offsets_filtered to return a float' do
+    expect(result).to be_a Float
+  end
+
   context 'AutoBandPass' do
     it 'should return the correct values with an even number of values' do
       values = (1..9).to_a
