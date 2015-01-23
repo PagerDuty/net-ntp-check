@@ -44,6 +44,12 @@ client = Net::NTP::Check::StatsdClient.new
 client.send_offset_stats
 ```
 
+#### Statsd Error Codes
+- 0 - Success
+- 1 - Unknown Error
+- 2 - Timeout Error
+- 3 - Socket Error (failed DNS resolution)
+
 ## Contributing
 
 1. Fork it ( https://github.com/pagerduty/net-ntp-check/fork )
