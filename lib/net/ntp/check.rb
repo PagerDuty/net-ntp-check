@@ -13,7 +13,7 @@ module Net
     module Check
       def self.logger
         @logger ||= Logger.new(STDOUT).tap do |l|
-          l.level = Logger::DEBUG
+          l.level = Logger::INFO
         end
       end
     end
