@@ -1,3 +1,6 @@
+# Deprecated
+This repository is no longer maintained.
+
 # Net::Ntp::Check
 
 [![Build Status](https://travis-ci.org/PagerDuty/net-ntp-check.svg?branch=master)](https://travis-ci.org/PagerDuty/net-ntp-check)
